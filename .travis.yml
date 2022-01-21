@@ -12,5 +12,6 @@ deploy:
   app: "ci-cd-test"
   env: "$EB_ENV"
   bucket_name: "$EB_BUCKET_NAME"
+  skip_cleanup: true
   on:
     branch: [main, dev]
