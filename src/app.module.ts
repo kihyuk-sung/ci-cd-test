@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { APP_NAME } from './inject/constant';
+import AppConfigServiceImpl from './config.service';
 
 @Module({
   imports: [ConfigModule.forRoot(), ConfigModule],
@@ -10,8 +10,8 @@ import { APP_NAME } from './inject/constant';
   providers: [
     AppService,
     {
-      provide: APP_NAME,
-      useValue: process.env.APP_NAME,
+      provide: 'APP_CONFIG_SERVICE',
+      useClass: AppConfigServiceImpl,
     },
   ],
 })
