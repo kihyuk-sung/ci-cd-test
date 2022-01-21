@@ -14,3 +14,5 @@ deploy:
   app: "ci-cd-test"
   env: "$EB_ENV"
   bucket_name: "$EB_BUCKET_NAME"
+  on:
+    branch: [main, dev]
