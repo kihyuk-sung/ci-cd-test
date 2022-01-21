@@ -1,4 +1,4 @@
-FROM node:16.13.0-alpine
+FROM node:16-alpine3.11
 # Install Global Module
 RUN npm install yarn --g --force
 
@@ -23,4 +23,4 @@ RUN yarn run build
 EXPOSE 3000
 
 # Start Server
-CMD ["yarn", "run", "start"]
+CMD ["yarn", "run", "start:prod"]
