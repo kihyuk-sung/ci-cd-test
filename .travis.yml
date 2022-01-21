@@ -6,10 +6,8 @@ cache: yarn
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id:
-    secure: "$AWS_ACCESS_KEY"
-  secret_access_key:
-    secure: "$AWS_SECRET_ACCESS_KEY"
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
   region: "ap-northeast-2"
   app: "ci-cd-test"
   env: "$EB_ENV"
