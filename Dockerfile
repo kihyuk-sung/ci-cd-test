@@ -5,16 +5,14 @@ RUN npm install yarn --g --force
 # Create Work Directory
 WORKDIR /app
 
-
-COPY ./package*.json ./
-COPY ./yarn.lock ./
-
-RUN yarn install
-
 # Copy Source Files
 ADD ./src ./src
+COPY ./package*.json ./
+COPY ./yarn.lock ./
 COPY ./tsconfig.json ./
 COPY ./tsconfig.build.json ./
+
+RUN yarn install
 
 # Build
 RUN yarn run build
